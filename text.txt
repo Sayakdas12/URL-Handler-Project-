@@ -1,0 +1,44 @@
+
+// home.ejs     // Server side randaring using html  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server_Side</title>
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1> Url Shortener </h1>
+    
+        <p> Url Generate: https://localhost:8001/url</p>
+
+    
+    <h3> again hiii </h3>
+    <from method="POST" action="/url"> 
+        <label>Enter Your Original URL</label>
+        <input type="text" name="url" placeholder="https://example.com"/>
+        <button type="submit">Generate</button>
+        
+    </from>
+</body>
+</html>
+
+//staticRouter.js 
+const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) =>{
+    return res.render("home");
+})
+
+
+
+
+module.exports = router;
+
+
